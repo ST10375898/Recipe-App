@@ -1,0 +1,112 @@
+﻿<Page x:Class="design.AddRecipe"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:design"
+      mc:Ignorable="d" 
+      d:DesignHeight="630" d:DesignWidth="1200" Background="white"
+      Title="AddRecipe">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Height="60" Grid.Column="2" Grid.ColumnSpan="2" Content="Recipe Details" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Magneto"/>
+
+        <Grid Grid.Row="8" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="SaveIngredient" Width="250" Background="#FF56D956" Foreground="White" Content="Save Ingredient" FontSize="24" Margin="25,4,25,4" Click="SaveIngredient_Click"/>
+            <Button x:Name="AddIngredient" Grid.Column="1" Margin="40,0,0,0" Width="250" Height="55" Background="#FF56D956" Foreground="White" Content="Add Next Ingredient" FontSize="24" Click="AddIngredient_Click"/>
+
+        </Grid>
+        <Label Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" Content=" ~Recipe Steps~" FontSize="45" HorizontalAlignment="Center" FontFamily="Goudy Old Style" FontWeight="Bold"/>
+        <Label x:Name="stepCounter" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" Content="Step 1 Description" FontSize="40" HorizontalAlignment="Center" FontFamily="Goudy Old Style"/>
+        <TextBox x:Name="stepInstruction" Foreground="White" FontSize="16" Margin="30,0,30,0" Background="#FF56D956" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
+        <Button x:Name="SaveStep" Foreground="White" Content="Save Step" Margin="-110,10,0,0" Width="200" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="7" Background="#FF56D956" FontSize="24" Click="SaveStep_Click"/>
+        <Button x:Name="AddStep" Foreground="White" Content="Add Next Step"  Margin="100,10,0,0" Width="200" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="7" Background="#FF56D956" FontSize="24" Click="AddStep_Click"/>
+
+
+        <Label  Grid.Row="0" Content="Recipe Name:" FontSize="34" VerticalAlignment="Center" FontFamily="Goudy Old Style" FontWeight="Bold" />
+        <TextBox  x:Name="recipeName" Foreground="White" FontSize="16" Grid.Row="0" Grid.Column="1"  Height="50" Background="#FF56D956" />
+        <Label x:Name="ingredientCounter" Grid.Row="2" Grid.ColumnSpan="3" Content="~Ingredient 1 Details~" FontSize="40" HorizontalAlignment="Center" FontFamily="Goudy Old Style" FontWeight="Bold"/>
+        <Label Grid.Row="3" Content="Ingredient Name:" FontSize="28" VerticalAlignment="Center" FontFamily="Goudy Old Style"/>
+        <TextBox x:Name="ingredientName" Foreground="White" FontSize="16" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Height="50" Background="#FF56D956"/>
+        <Label Grid.Row="4" Content="Quantity:" FontSize="28" VerticalAlignment="Center" FontFamily="Goudy Old Style"/>
+        <TextBox x:Name="quantity" Foreground="White" FontSize="16" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Height="50" Background="#FF56D956"/>
+
+        <Label Grid.Row="5" Content="Measure Unit:" FontSize="28" VerticalAlignment="Center" FontFamily="Goudy Old Style"/>
+        <TextBox x:Name="unit" Foreground="White" FontSize="16" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Height="50" Background="#FF56D956"/>
+
+        <Menu Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Height="50" >
+            <MenuItem x:Name="unitOfMeasure" Header="Unit Of Measure" Grid.ColumnSpan="2" Height="50" Width="395" FontSize="16"   Background="#FF56D956" >
+                <MenuItem x:Name="litres" Header="Litres (l)" Click="litres_Click"/>
+                <MenuItem x:Name="milliLitres" Header="Milli Litres (ml)" Click="milliLitres_Click"/>
+                <MenuItem x:Name="kiloLitres" Header="Kilo Litres (kl)" Click="kiloLitres_Click"/>
+                <MenuItem x:Name="cups" Header="Cups" Click="cups_Click"/>
+                <MenuItem x:Name="tspoons" Header="Teaspoons" Click="tspoons_Click"/>
+                <MenuItem x:Name="grams" Header="Grams (g)" Click="grams_Click"/>
+                <MenuItem x:Name="milliGrams" Header="Milli grams (mg)" Click="milliGrams_Click"/>
+                <MenuItem x:Name="kiloGrams" Header="Kilo grams (kg)" Click="kiloGrams_Click"/>
+                <MenuItem x:Name="other" Header="Other" Click="other_Click"/>
+            </MenuItem>
+        </Menu>
+
+        
+        
+        <Label Grid.Row="6" Content="Food Group:" FontSize="28" VerticalAlignment="Center" FontFamily="Goudy Old Style"/>
+        <TextBox x:Name="foodGroup" Foreground="White" FontSize="16" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Height="50" Background="#FF56D956"/>
+        <Menu Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Height="50">
+            <MenuItem x:Name="group" Header="Food Group" Height="50" Width="395" FontSize="16"   Background="#FF56D956" >
+                <MenuItem x:Name="proteins" Header="Proteins" Click="proteins_Click"/>
+                <MenuItem x:Name="fats" Header="Fats" Click="fats_Click"/>
+                <MenuItem x:Name="oil" Header="Oil" Click="oil_Click"/>
+                <MenuItem x:Name="fruits" Header="Fruits" Click="fruits_Click"/>
+                <MenuItem x:Name="veg" Header="Vegetables" Click="veg_Click"/>
+                <MenuItem x:Name="carbs" Header="Carbohydrates" Click="carbs_Click"/>
+                <MenuItem x:Name="liqs" Header="Liquids" Click="liqs_Click"/>
+                <MenuItem x:Name="sugar" Header="Sugars" Click="sugar_Click"/>
+                <MenuItem x:Name="otherfood" Header="Other" Click="otherfood_Click"/>
+            </MenuItem>
+        </Menu>
+        <Label Grid.Row="7" Content="Calories:" FontSize="28" VerticalAlignment="Center" FontFamily="Goudy Old Style"/>
+        <TextBox x:Name="calories" Foreground="White" FontSize="16" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Height="50" Background="#FF56D956"/>
+
+
+        <Image Source="/images/harvest.png"  Grid.Row="1" Grid.Column="1"/>
+
+
+        <Image Margin="0,0,0,0" Source="/images/pour.png"  Grid.Row="1" Grid.Column="4"/>
+
+
+        <Image Source="/images/ingredients.png" Height="50" Width="50" Grid.Row="3" Grid.Column="2" Margin="135,0,0,0"/>
+        <Image Source="/images/count.png" Height="50" Width="50" Grid.Row="4" Grid.Column="2" Margin="135,0,0,0"/>
+        <Image Source="/images/ruler.png" Height="50" Width="50" Grid.Row="5" Grid.Column="2" Margin="135,0,0,0"/>
+        <Image Source="/images/macronutrient.png" Height="50" Width="50" Grid.Row="6" Grid.Column="2" Margin="135,0,0,0"/>
+        <Image Source="/images/kcal.png" Height="50" Width="50" Grid.Row="7" Grid.Column="2" Margin="135,0,0,0"/>
+
+        <Button x:Name="saveRecipe" Foreground="White" Content="Save Recipe"  Margin="0,10,0,0" Width="300" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="9" Background="#FF56D956" FontSize="24" Click="saveRecipe_Click"/>
+
+
+    </Grid>
+</Page>

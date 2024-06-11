@@ -49,7 +49,8 @@ namespace design
         {
             // this generates a new Display window and also transfers the recipe objects of this window to page being generated
             DisplayRecpe displayRecpe = new DisplayRecpe();
-            displayRecpe.recipes.AddRange(recipes);
+            var odererdRecipe = from recipe in recipes orderby recipe.Name select recipe;
+            displayRecpe.recipes.AddRange(orderedRecipe);
             workSpace.Content = displayRecpe;
 
         }

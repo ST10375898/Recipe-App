@@ -30,6 +30,7 @@ namespace design
 
         private void searchBtn_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
             // this is the code that will search through each recipe for a particular ingredient, food group or number of calories
             recipeList.Items.Clear();
             bool itemFound = false;
@@ -135,6 +136,9 @@ namespace design
                 }
                
             }
+=======
+           
+>>>>>>> 0984b50bb60c77140a9c17d62be68a004e561bf7
            
             
 

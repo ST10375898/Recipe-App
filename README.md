@@ -85,9 +85,15 @@ In case that you find a but please put in a a file detailing the bug and a proba
 ## Thank you for reading
 I hope you enjoy using this project, Thank you.
 ## Github Repository Link
+<<<<<<< HEAD
 <a href="https://github.com/ST10375898/POE_PART3">Repository Link</a>
 ## Screeshot of Repository Commit
 <img src="Screenshot (178).png" width="" height="500px">
+=======
+<a href="https://github.com/ST10375898/POE_PART2">Repository Link</a>
+## Screeshot of Repository Commit
+<img src="Screenshot (228).png" width="" height="500px">
+>>>>>>> 0984b50bb60c77140a9c17d62be68a004e561bf7
 
 
 

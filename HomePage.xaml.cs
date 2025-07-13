@@ -25,5 +25,12 @@ namespace design
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            mainWindow.workSpace.Content = new AddRecipe();
+            
+        }
     }
 }

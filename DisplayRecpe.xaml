@@ -40,8 +40,8 @@
                    Width="40" Height="40" HorizontalAlignment="Left"
                    />
         </Border>
-       
 
+        <!--This section deals with the search bar with the fiter fuction -->
         <TextBox x:Name="searchTerm" Width="290"
                  FontSize="20"
                  Foreground="White"
@@ -50,7 +50,7 @@
                  Grid.Row="1" 
                  Grid.Column="2" 
                  Grid.ColumnSpan="2"   Background="#FF56D956"/>
-
+       
         <Menu Height="60" Width="150"  Background="#FF56D956" Grid.Row="1" Grid.Column="4" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center">
             <MenuItem x:Name="filter" Header="Filter By.." FontSize="24" Height="60" Width="150" >
                 
@@ -104,12 +104,13 @@
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
             FontWeight="Bold"/>
+        <!--This section of code deals with the scaling controls that make use of radiobuttons -->
         <Border CornerRadius="20" Background="#FF56D956" Width="280" Grid.Row="3" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="2">
             <StackPanel Width="250" Height="250">
                 <RadioButton x:Name="origionalScale" IsChecked="True" GroupName="scale" Content="Original Scale" 
                              Foreground="White"
                              FontSize="24" VerticalAlignment="Center"
-                             Margin="0,0,0,10" Click="origionalScale_Click"/>
+                             Margin="0,0,0,10" Click="origionalScale_Click" Checked="origionalScale_Checked"/>
                 <RadioButton x:Name="doubleScale" GroupName="scale"  Content="Double Scale" 
                              Foreground="White"
                              FontSize="24" VerticalAlignment="Center"
@@ -126,7 +127,7 @@
         </Border>
 
         <Button x:Name="outputRecipeDisplay" Click="outputRecipeDisplay_Click" Content="Display " FontSize="24" Foreground="White" Background="#FF56D956" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Height="60" Width="260"/>
-        <Button x:Name="chooseRecipe" Click="chooseRecipe_Click" Content="Choose Recipe" FontSize="24" Foreground="White" Background="#FF56D956" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Height="60" Width="260"/>
+        <Button x:Name="chooseRecipe" Click="chooseRecipe_Click" Content="Show Recipes" FontSize="24" Foreground="White" Background="#FF56D956" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Height="60" Width="260"/>
 
     </Grid>
 </Page>

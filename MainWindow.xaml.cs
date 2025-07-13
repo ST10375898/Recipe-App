@@ -49,7 +49,8 @@ namespace design
         {
             // this generates a new Display window and also transfers the recipe objects of this window to page being generated
             DisplayRecpe displayRecpe = new DisplayRecpe();
-            displayRecpe.recipes.AddRange(recipes);
+            var recipeOrder = from recipe in recipes orderby recipe.Name select recipe;
+            displayRecpe.recipes.AddRange(recipeOrder);
             workSpace.Content = displayRecpe;
 
         }
@@ -57,6 +58,15 @@ namespace design
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             workSpace.Content = new AddRecipe();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            recipes.Clear();
+            MessageBoxOptions options = MessageBoxOptions.DefaultDesktopOnly;
+            MessageBox.Show("All Recipes have been cleared");
+            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            mainWindow.workSpace.Content = new AddRecipe();
         }
     }
 }

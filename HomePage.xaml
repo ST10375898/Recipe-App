@@ -9,6 +9,7 @@
       Title="HomePage">
 
     <Grid>
+        <!--Grid column and Grid row Definitions-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
@@ -26,12 +27,13 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <!--Definition of contents that go into the homepage-->
         <WrapPanel Margin="0,100,0,0" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2">
             <Label  Content="Welcome To Recipe" FontSize="60" FontFamily="Segoe UI Black"/>
             <Label Margin="-15,0,0,0" Content=" Recorder App" FontSize="65" FontFamily="Segoe UI Black"/>
         </WrapPanel>
         <Label FontSize="25" Content=" Record all your favourite Recipes " Grid.Row="3" Grid.ColumnSpan="3" Margin="0,-15,0,0"/>
-        <Button Foreground="White" BorderThickness="0" Content="Add New Recipe" Width="250" Grid.Row="3" Grid.ColumnSpan="3" Height="60" Margin="-30,20,0,0" Background="#FF56D956" FontSize="24"/>
+        <Button Foreground="White" BorderThickness="0" Content="Add New Recipe" Width="250" Grid.Row="3" Grid.ColumnSpan="3" Height="60" Margin="-30,20,0,0" Background="#FF56D956" FontSize="24" Click="Button_Click"/>
         <Image Source="/images/autumn-salad-with-apples-walnuts-isolated-white-backgroundxa.jpg" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="7"  Grid.RowSpan="4"/>
 
     </Grid>

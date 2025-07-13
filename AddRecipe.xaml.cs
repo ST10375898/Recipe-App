@@ -20,6 +20,7 @@ namespace design
     /// </summary>
     public partial class AddRecipe : Page
     {
+        // object generic list instantiations that will be used in recording of recipe details
         public List<Recipe> recipes = new List<Recipe>();
         public List<Ingredient> ingredients = new List<Ingredient>();
         public List<Step> steps = new List<Step>();
@@ -86,32 +87,44 @@ namespace design
         private void saveRecipe_Click(object sender, RoutedEventArgs e)
         {
             // this section of code serves to add a new recipe with its ingredient and steps to the recipe array
-            recipes.Add(new Recipe {
-                Ingredients = ingredients, 
-                Name = recipeName.Text, 
-                Steps = steps });
 
-           
-            try
+            if (ingredients.Count != 0)
             {
-                MessageBox.Show($"{recipes[recipes.Count - 1].Name} Recipe Successfully Added.");
-            }catch(IndexOutOfRangeException) 
+                recipes.Add(new Recipe
+                {
+                    Ingredients = ingredients,
+                    Name = recipeName.Text,
+                    Steps = steps
+                });
+                try
+                {
+                    MessageBox.Show($"{recipes[recipes.Count - 1].Name} Recipe Successfully Added.");
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    MessageBox.Show("No recipes on system yet");
+                }
+
+                ingredientName.Text = string.Empty;
+                quantity.Text = string.Empty;
+                unit.Text = string.Empty;
+                foodGroup.Text = string.Empty;
+                calories.Text = string.Empty;
+                stepInstruction.Text = string.Empty;
+                recipeName.Text = string.Empty;
+                recipeName.Focus();
+
+
+                MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+                mainWindow.recipes.AddRange(recipes);
+                mainWindow.workSpace.Content = new AddRecipe();
+            }
+            else
             {
-                MessageBox.Show("No recipes on system yet");
+                MessageBox.Show("Please Enter at least one Ingredient and step!");
             }
 
-            ingredientName.Text = string.Empty;
-            quantity.Text = string.Empty;
-            unit.Text = string.Empty;
-            foodGroup.Text = string.Empty;
-            calories.Text = string.Empty;
-            stepInstruction.Text = string.Empty;
-            recipeName.Text = string.Empty;
-            recipeName.Focus();
-
-
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-            mainWindow.recipes.AddRange(recipes);
+            
         }
 
         // the following fuctions listen for when the user clicks on a specific unit of measure

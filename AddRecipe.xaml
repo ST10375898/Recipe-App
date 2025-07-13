@@ -9,6 +9,7 @@
       Title="AddRecipe">
 
     <Grid>
+        <!-- Grid column and Grid row definitions-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -30,7 +31,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label Height="60" Grid.Column="2" Grid.ColumnSpan="2" Content="Recipe Details" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Magneto"/>
-
+        
         <Grid Grid.Row="8" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -40,13 +41,14 @@
             <Button x:Name="AddIngredient" Grid.Column="1" Margin="40,0,0,0" Width="250" Height="55" Background="#FF56D956" Foreground="White" Content="Add Next Ingredient" FontSize="24" Click="AddIngredient_Click"/>
 
         </Grid>
+        <!-- Code that deals with controls that enable a user to record steps-->
         <Label Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" Content=" ~Recipe Steps~" FontSize="45" HorizontalAlignment="Center" FontFamily="Goudy Old Style" FontWeight="Bold"/>
         <Label x:Name="stepCounter" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" Content="Step 1 Description" FontSize="40" HorizontalAlignment="Center" FontFamily="Goudy Old Style"/>
         <TextBox x:Name="stepInstruction" Foreground="White" FontSize="16" Margin="30,0,30,0" Background="#FF56D956" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
         <Button x:Name="SaveStep" Foreground="White" Content="Save Step" Margin="-110,10,0,0" Width="200" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="7" Background="#FF56D956" FontSize="24" Click="SaveStep_Click"/>
         <Button x:Name="AddStep" Foreground="White" Content="Add Next Step"  Margin="100,10,0,0" Width="200" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="7" Background="#FF56D956" FontSize="24" Click="AddStep_Click"/>
 
-
+        <!-- Controls for entering Ingredient Details-->
         <Label  Grid.Row="0" Content="Recipe Name:" FontSize="34" VerticalAlignment="Center" FontFamily="Goudy Old Style" FontWeight="Bold" />
         <TextBox  x:Name="recipeName" Foreground="White" FontSize="16" Grid.Row="0" Grid.Column="1"  Height="50" Background="#FF56D956" />
         <Label x:Name="ingredientCounter" Grid.Row="2" Grid.ColumnSpan="3" Content="~Ingredient 1 Details~" FontSize="40" HorizontalAlignment="Center" FontFamily="Goudy Old Style" FontWeight="Bold"/>
@@ -57,7 +59,7 @@
 
         <Label Grid.Row="5" Content="Measure Unit:" FontSize="28" VerticalAlignment="Center" FontFamily="Goudy Old Style"/>
         <TextBox x:Name="unit" Foreground="White" FontSize="16" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Height="50" Background="#FF56D956"/>
-
+        <!--Menu that displays units of measure that the user can choose form-->
         <Menu Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Height="50" >
             <MenuItem x:Name="unitOfMeasure" Header="Unit Of Measure" Grid.ColumnSpan="2" Height="50" Width="395" FontSize="16"   Background="#FF56D956" >
                 <MenuItem x:Name="litres" Header="Litres (l)" Click="litres_Click"/>
@@ -76,6 +78,8 @@
         
         <Label Grid.Row="6" Content="Food Group:" FontSize="28" VerticalAlignment="Center" FontFamily="Goudy Old Style"/>
         <TextBox x:Name="foodGroup" Foreground="White" FontSize="16" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Height="50" Background="#FF56D956"/>
+        
+        <!--This section of code is the menu that shows the food groups that users can choose-->
         <Menu Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Height="50">
             <MenuItem x:Name="group" Header="Food Group" Height="50" Width="395" FontSize="16"   Background="#FF56D956" >
                 <MenuItem x:Name="proteins" Header="Proteins" Click="proteins_Click"/>

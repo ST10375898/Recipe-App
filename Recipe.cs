@@ -22,7 +22,7 @@ namespace design
 
         public List<Step> Steps
         {
-            get { return steps; }
+            get { return steps; } 
             set { steps = value; }
         }
 
@@ -103,5 +103,10 @@ namespace design
                           $"************* End of Recipe ****************************";
             return lastOutput;
         }
+        public string method()
+        {
+            return "Just test here";
+        }
+
     }
 }

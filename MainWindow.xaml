@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Height="680" Width="1200" Background="White">
     <Grid>
+        <!--Grid column and grid row definitions-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
@@ -31,8 +32,10 @@
         <Label FontSize="25" Content=" Record all your favourite Recipes " Grid.Row="3" Grid.ColumnSpan="3" Margin="0,-15,0,0"/>
         <Button Click="Button_Click_3" Foreground="White" BorderThickness="0" Content="Add New Recipe" Width="250" Grid.Row="3" Grid.ColumnSpan="3" Height="60" Margin="-30,20,0,0" Background="#FF56D956" FontSize="24"/>
         <Image Source="/images/autumn-salad-with-apples-walnuts-isolated-white-backgroundxa.jpg" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="7"  Grid.RowSpan="4"/>
+        <!--Frame control to display the correct pages as they are needed by the user-->
         <Frame x:Name="workSpace" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.ColumnSpan="8" Grid.RowSpan="4"/>
         <Grid Grid.ColumnSpan="8" Background="#FF56D956">
+            <!--Column defintions that define where the buttons of the main view are placed-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50*"/>
                 <ColumnDefinition Width="50*"/>
@@ -43,11 +46,12 @@
                 <ColumnDefinition Width="51*"/>
                 <ColumnDefinition Width="34*"/>
             </Grid.ColumnDefinitions>
+            <!--Main view buttons that determine what actions the user can perfom as they use the system-->
             <Label Content="Recipe Saver" Grid.Column="1" Grid.ColumnSpan="2" FontSize="33" VerticalAlignment="Center" Foreground="White" FontFamily="Harlow Solid Italic"/>
             <Button Grid.Column="3" Content="       Home" Margin="2,2,4,0" FontSize="16" Background="#FF56D956" BorderThickness="0" Foreground="White" Height="44" VerticalAlignment="Top" Click="Button_Click_1"/>
             <Button Grid.Column="4" Content="Add Recipe"  Margin="2,2,4,4" FontSize="16" Background="#FF56D956" BorderThickness="0" Foreground="White" Click="Button_Click"/>
             <Button Grid.Column="5" Content="View Recipes"  Margin="2,0,4,4" FontSize="16" Background="#FF56D956" BorderThickness="0" Foreground="White" Height="44" VerticalAlignment="Bottom" Click="Button_Click_2"/>
-            <Button Grid.Column="6" Content="Clear Data"  Margin="2,2,4,4" FontSize="16" Background="#FF56D956" BorderThickness="0" Foreground="White"/>
+            <Button Grid.Column="6" Content="Clear Data"  Margin="2,2,4,4" FontSize="16" Background="#FF56D956" BorderThickness="0" Foreground="White" Click="Button_Click_4"/>
             <Image Source="images/chef.png" Width="60" Height="60"/>
         </Grid>
     </Grid>

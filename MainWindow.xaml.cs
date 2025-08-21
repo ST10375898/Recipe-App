@@ -47,7 +47,7 @@ namespace design
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            // this generates a new Display window and also transfers the recipe objects of this window to page being generated
+            
             DisplayRecpe displayRecpe = new DisplayRecpe();
 <<<<<<< HEAD
             var recipeOrder = from recipe in recipes orderby recipe.Name select recipe;
